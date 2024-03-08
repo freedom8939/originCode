@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container .header {
+    display: flex;
+    background-color: #333333;
+    height: 70px;
+}
+
+.logo {
+    height: inherit;
+    display: flex;
+    margin: 0 40px 0 130px;
+    align-items: center;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    margin-right: 15px;
+}
+
+.logo a {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.ul-table {
+    display: flex;
+    list-style: none;
+    margin-left: 85px;
+    color: white;
+
+}
+
+.ul-table li {
+    margin: 0 20px;
+    height: 100%;
+}
+
+.ul-table li a {
+    display: block;
+    height: 100%;
+    padding: 10px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    color: #ccc;
+    font-size: 16px;
+}
+
+.ul-table li:hover a {
+    box-shadow: 0 0 5px #ccc;
+    border-radius: 5px;
+}
+
+.search {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.search .searchBox {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    width: 229px;
+    font-size: 16px;
+    outline: none;
+
+}
+
+.searchImg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 10px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.login {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #757575;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 125px;
+    font-size: 17px;
+    text-align: center;
+    margin: auto 40px;
+    transition: background-color 0.3s ease;
+}
+
+.login:hover {
+    background-color: #AFAFAF;
+}
+
+/*footer部分*/
+.footer {
+    background-color: #f2f2f2;
+    padding: 20px 0;
+    text-align: center;
+    position: absolute; /* Set position to absolute */
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+    color: #666;
+}
+
+.footer a {
+    color: #666;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #333;
+}
