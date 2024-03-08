@@ -8,6 +8,9 @@
 </head>
 <body>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
+
+
 <div class="container">
 
     <div class="header">
@@ -24,7 +27,6 @@
                 <li><a href="">今日歌手</a></li>
                 <li><a href="">今日歌手</a></li>
                 <li><a href="">今日歌手</a></li>
-                <li><a href="">今日歌手</a></li>
             </ul>
 
         </h1>
@@ -35,7 +37,14 @@
             <img class="searchImg" src="public/search.png" alt="">
         </div>
         <div class="login" id="loginButton">
-            <span >登录</span>
+            <span>登录</span>
+        </div>
+        <div class="welcome" style="display:none;">
+            <div>
+                <span>欢迎您, <span id="username"></span></span>
+            </div>
+            <button id="logoutButton">退出</button>
+
         </div>
     </div>
     <!--中间层-->
@@ -53,5 +62,48 @@
 
 </div>
 <script src="components/login/login.js"></script>
+<!--//每次进入默认刷新-->
+<script>
+    const nickName = "";
+    if (true) {
+        let userLoginState = Cookies.get('userLoginState');
+        //本地有cookie
+        if (userLoginState) {
+            // 如果用户已登录
+            let userInfo = JSON.parse(userLoginState);
+            // 显示欢迎信息和用户名
+            $('.welcome').show();
+            $('#username').text(userInfo.userAccount);
+            // 隐藏登录按钮
+            $('#loginButton').hide();
+        } else {
+            // 如果用户未登录，显示登录按钮
+            $('.welcome').hide();
+            $('#loginButton').show();
+        }
+    }
+    $(document).ready(function () {
+        $.ajax({
+            url: 'http://localhost:8080/api/user/current',
+            type: 'GET',
+            xhrFields: {
+                withCredentials: true // 允许发送 cookie
+            },
+            success: function (response) {
+                // 请求成功的处理
+                console.log(response);
+            },
+            error: function (xhr, status, error) {
+                // 请求失败的处理
+                console.error(xhr.responseText);
+            }
+        });
+
+        //如果本地有用户态 那么就把登录按钮直接给取消
+
+
+    });
+
+</script>
 </body>
 </html>

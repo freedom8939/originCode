@@ -106,7 +106,46 @@ a {
     margin: auto 40px;
     transition: background-color 0.3s ease;
 }
+.welcome{
+    display: flex;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    /*padding: 10px 20px;*/
+    color: white;
+    /*background-color: #757575;*/
+    border-radius: 25px;
+    cursor: pointer;
+    height: 100%;
+    /*width: 125px;*/
+    font-size: 15px;
+    text-align: center;
+    margin: auto 60px;
+    transition: background-color 0.3s ease;
+}
+.welcome div{
+    margin: auto 0;
+    font-size: 18px;
+}
+/* 样式化按钮 */
+#logoutButton {
+    background-color: #99bd99; /* 绿色 */
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /*height: 20px;*/
+    margin: 4px 40px;
+    cursor: pointer;
+    border-radius: 14px;
+}
 
+/* 当鼠标悬停在按钮上时 */
+#logoutButton:hover {
+    background-color: rgba(26, 206, 30, 0.93); /* 较深的绿色 */
+}
 .login:hover {
     background-color: #AFAFAF;
 }
