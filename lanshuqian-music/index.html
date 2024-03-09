@@ -64,7 +64,6 @@
 <script src="components/login/login.js"></script>
 <!--//每次进入默认刷新-->
 <script>
-    const nickName = "";
     if (true) {
         let userLoginState = Cookies.get('userLoginState');
         //本地有cookie
@@ -99,7 +98,25 @@
             }
         });
 
-        //如果本地有用户态 那么就把登录按钮直接给取消
+        $('#logoutButton').on('click', function () {
+            Cookies.remove('userLoginState');
+
+            $.ajax({
+                url: 'http://localhost:8080/api/user/logout',
+                type: 'POST',
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function (response) {
+                    Cookies.remove('userLoginState');
+                    $('.welcome').hide();
+                    $('#loginButton').show();
+                },
+                error: function (xhr, status, error) {
+                    console.error('Logout failed:', xhr.responseText);
+                }
+            });
+        });
 
 
     });
