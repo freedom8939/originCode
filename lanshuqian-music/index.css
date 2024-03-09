@@ -128,10 +128,12 @@ a {
 }
 /* 样式化按钮 */
 #logoutButton {
-    background-color: #99bd99; /* 绿色 */
+    background-color: #ccc;
     border: none;
     color: white;
-    padding: 15px 20px;
+    padding: 5px 20px;
+    height: 50%;
+    align-self: center;
     text-align: center;
     text-decoration: none;
     display: inline-block;
