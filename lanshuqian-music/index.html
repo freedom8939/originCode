@@ -84,18 +84,14 @@
         }
     }
     $(document).ready(function () {
-
+        /*默认第一页*/
         $.ajax({
             url: '../lanshuqian-music/components/FindNiceMusic/index.html',
             type: 'GET',
             success: function (response) {
                 $('#content-main').html(response);
-            },
-            error: function (xhr, status, error) {
-                console.error('Failed to load page:', error);
             }
         });
-
         $.ajax({
             url: 'http://localhost:8080/api/user/current',
             type: 'GET',
@@ -103,15 +99,10 @@
                 withCredentials: true // 允许发送 cookie
             },
             success: function (response) {
-            },
-            error: function (xhr, status, error) {
-
             }
         });
-
         $('#logoutButton').on('click', function () {
             Cookies.remove('userLoginState');
-
             $.ajax({
                 url: 'http://localhost:8080/api/user/logout',
                 type: 'POST',
@@ -128,10 +119,9 @@
                 }
             });
         });
-
         $('a').on('click', function (e) {
             e.preventDefault();
-            // 获取超链接的 href 属性值，即目标页面的路径
+            // 获取超链接的 href 属性值
             var pageUrl = $(this).attr('href');
             $.ajax({
                 url: pageUrl,
@@ -142,10 +132,6 @@
 
             });
         });
-
-
-
-
     });
 </script>
 </body>
