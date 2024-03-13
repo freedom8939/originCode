@@ -23,7 +23,7 @@ a {
     height: inherit;
     display: flex;
     white-space: nowrap;
-    margin: 0 40px 0 70px;
+    margin: 0 0px 0 300px;
     align-items: center;
 }
 
@@ -40,33 +40,38 @@ a {
 }
 
 .ul-table {
-    display: flex;
+    /*display: flex;*/
     list-style: none;
-    margin-left: 15px;
+    margin-left: 45px;
     color: white;
+    float: left;
 
 }
 
 .ul-table li {
-    margin: 0 20px;
-    height: 100%;
+    display: inline-block;
+    color: #ccc;
+    line-height: 70px;
+    font-size: 14px;
+    padding: 0 10px;
+    cursor: pointer;
+    letter-spacing: normal;
 }
 
 .ul-table li a {
     display: block;
     height: 100%;
-    padding: 10px;
     white-space: nowrap;
     flex-wrap: nowrap;
     color: #ccc;
     font-size: 13px;
 }
-
-.ul-table li:hover a {
-    box-shadow: 0 0 5px #ccc;
-    border-radius: 5px;
+.ul-table li:hover{
+    background-color: #000000;
 }
-
+.first-fun{
+    background-color: #000000;
+}
 .search {
     display: flex;
     align-self: center;
@@ -76,18 +81,17 @@ a {
 .search .searchBox {
     padding: 8px;
     border-radius: 20px;
-    border: 1px solid #ccc;
+    color: #9b9b9b;
     width: 229px;
+    margin-left: 25px;
     font-size: 13px;
-    outline: none;
-
 }
 
 .searchImg {
-    width: 45px;
-    height: 50px;
-    padding: 10px 10px;
+    width: 35px;
+    height: auto;
     border: none;
+    align-self: center;
     color: #fff;
     cursor: pointer;
     margin-left: 5px;
@@ -95,16 +99,16 @@ a {
 
 .login {
     display: block;
-    padding: 10px 20px;
+    padding: 5px 4px;
     color: white;
-    background-color: #757575;
+    /*background-color: #757575;*/
     border-radius: 25px;
     cursor: pointer;
-    width: 125px;
-    font-size: 13px;
+    width: 80px;
+    font-size: 14px;
     text-align: center;
     margin: auto 40px;
-    transition: background-color 0.3s ease;
+    /*transition: background-color 0.3s ease;*/
 }
 .welcome{
     display: flex;
@@ -126,8 +130,10 @@ a {
     margin: auto 0;
     font-size: 18px;
 }
+
 /* 样式化按钮 */
 #logoutButton {
+    /*white-space: nowrap*/
     background-color: #ccc;
     border: none;
     color: white;
@@ -141,15 +147,14 @@ a {
     margin: 4px 20px;
     cursor: pointer;
     border-radius: 14px;
+
 }
 
 
 #logoutButton:hover {
     background-color: rgba(26, 206, 30, 0.93);
 }
-.login:hover {
-    background-color: #AFAFAF;
-}
+
 
 /*footer部分*/
 .footer {
