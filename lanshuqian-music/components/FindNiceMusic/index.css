@@ -72,7 +72,6 @@ body {
 
 .player-area {
     display: flex;
-    border: 1px solid red;
     float: left;
     height: inherit;
     width: 70%;
@@ -110,5 +109,12 @@ body {
     background-color: lightskyblue;
     position: absolute;
     top: 0;
-    left: 0;
+}
+.center-box-of-bottom{
+    width: 100%;
+}
+.songInfomation{
+
+    float: right;
+    width: 30%;
 }

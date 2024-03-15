@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>发现好音乐</title>
     <link rel="stylesheet" href="index.css">
+    <script src="./index.js"></script>
 </head>
-<script src="index.js"></script>
+
 <body>
 <div id="music-container">
 
@@ -80,8 +81,17 @@
                 <source src="../../music/黑屋乐队-猫说.mp3" type="audio/mpeg">
                 此浏览器版本不支持audio,建议选用chrome,edge等主流浏览器。
             </audio>
-            <div id="progress">
-                <div id="progress-bar"></div>
+            <div class="center-box-of-bottom">
+                <div>
+                    <!--空格占位-->
+                    &nbsp;
+                </div>
+                <div id="progress">
+                    <div id="progress-bar"></div>
+                </div>
+                <div class="songInfomation">
+                    <span id="init-time">00:00</span> <span> /  03:53</span>
+                </div>
             </div>
         </div>
         <!--右侧功能区-->
@@ -95,6 +105,7 @@
 
 </div>
 <script>
+
     const audio = document.getElementById("audioId");
     const progressBar = document.getElementById("progress-bar");
     const playMusic = document.getElementById('playMusic');
@@ -113,23 +124,50 @@
         pauseMusic.style.display = 'none';
         playMusic.style.display = 'inline-block';
         pauseAudio();
+        //停止计时器
     });
 
     function updateProgress() {
-        var progress = (audio.currentTime / audio.duration) * 100;
+        let progress = (audio.currentTime / audio.duration) * 100;
         progressBar.style.width = progress + "%";
         if (!audio.paused && !audio.ended) {
             setTimeout(updateProgress, 500);
         }
     }
 
+    let timeSpan = document.getElementById('init-time');
+    let currentTime = 0;  //表示时间从0开始
+    // 定义定时器变量
+    let timer;
+
+    // 每秒增加一次时间，并更新显示
+    function updateTime() {
+        currentTime++; // 增加一秒
+        let minutes = Math.floor(currentTime / 60);
+        let seconds = currentTime % 60;
+        // 格式化时间
+        let newTimeFormat = (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+        // 更新span元素的文本内容
+        timeSpan.textContent = newTimeFormat;
+    }
+    // 启动定时器
+    function startTimer() {
+        timer = setInterval(updateTime, 1000); // 每秒更新一次
+    }
+
+    //停止定时器
+    function pauseInterval(){
+        clearInterval(timer); // 清除定时器
+    }
     function playAudio() {
         audio.play();
+        startTimer();
         updateProgress();
     }
 
     function pauseAudio() {
         audio.pause();
+        pauseInterval();
     }
 
 
