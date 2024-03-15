@@ -104,12 +104,12 @@
     pauseMusic.style.display = 'none';
     playMusic.style.display = 'inline-block';
 
-    playMusic.addEventListener('click', function() { //点击播放
+    playMusic.addEventListener('click', function () { //点击播放
         pauseMusic.style.display = 'inline-block';
         playMusic.style.display = 'none';
         playAudio();
     });
-    pauseMusic.addEventListener('click', function() { //点击暂停
+    pauseMusic.addEventListener('click', function () { //点击暂停
         pauseMusic.style.display = 'none';
         playMusic.style.display = 'inline-block';
         pauseAudio();
@@ -122,6 +122,7 @@
             setTimeout(updateProgress, 500);
         }
     }
+
     function playAudio() {
         audio.play();
         updateProgress();

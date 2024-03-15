@@ -94,7 +94,6 @@ body {
     width: 35px;
 }
 
-
 #progress {
     display: flex;
     margin: 0 0 10px 25px;
@@ -104,9 +103,7 @@ body {
     align-self: end;
     position: relative;
 
-
 }
-
 #progress-bar {
     width: 0%;
     height: 100%;
