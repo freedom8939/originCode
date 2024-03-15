@@ -67,9 +67,15 @@ body {
     background-color: #fff;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.9);
+
 }
 
 .player-area {
+    display: flex;
+    border: 1px solid red;
+    float: left;
+    height: inherit;
+    width: 70%;
 
 }
 
@@ -88,3 +94,24 @@ body {
     width: 35px;
 }
 
+
+#progress {
+    display: flex;
+    margin: 0 0 10px 25px;
+    width: 80%;
+    height: 3px;
+    background-color: black;
+    align-self: end;
+    position: relative;
+
+
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: lightskyblue;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

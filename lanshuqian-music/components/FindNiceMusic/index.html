@@ -70,11 +70,19 @@
 
         </table>
     </div>
-
     <div class="bottom-container">
         <!--左侧播放区-->
         <div class="player-area">
-
+            <!--封面在左侧-->
+            <img style="width: 50px" height="auto" src="../../public/coverImages/images1.jpg" alt="封面">
+            <!--音乐播放区-->
+            <audio id="audioId">
+                <source src="../../music/黑屋乐队-猫说.mp3" type="audio/mpeg">
+                此浏览器版本不支持audio,建议选用chrome,edge等主流浏览器。
+            </audio>
+            <div id="progress">
+                <div id="progress-bar"></div>
+            </div>
         </div>
         <!--右侧功能区-->
         <div class="function-area">
@@ -87,8 +95,11 @@
 
 </div>
 <script>
+    const audio = document.getElementById("audioId");
+    const progressBar = document.getElementById("progress-bar");
     const playMusic = document.getElementById('playMusic');
     const pauseMusic = document.getElementById('pauseMusic');
+
     // 初始化
     pauseMusic.style.display = 'none';
     playMusic.style.display = 'inline-block';
@@ -96,11 +107,29 @@
     playMusic.addEventListener('click', function() { //点击播放
         pauseMusic.style.display = 'inline-block';
         playMusic.style.display = 'none';
+        playAudio();
     });
-    pauseMusic.addEventListener('click', function() {
+    pauseMusic.addEventListener('click', function() { //点击暂停
         pauseMusic.style.display = 'none';
         playMusic.style.display = 'inline-block';
+        pauseAudio();
     });
+
+    function updateProgress() {
+        var progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = progress + "%";
+        if (!audio.paused && !audio.ended) {
+            setTimeout(updateProgress, 500);
+        }
+    }
+    function playAudio() {
+        audio.play();
+        updateProgress();
+    }
+
+    function pauseAudio() {
+        audio.pause();
+    }
 
 
 </script>
