@@ -13,17 +13,19 @@ a {
     justify-content: center;
 }
 
-.container .header {
-    display: flex;
+.header {
     background-color: #333333;
     height: 70px;
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 .logo {
     height: inherit;
     display: flex;
     white-space: nowrap;
-    margin: 0 0px 0 300px;
     align-items: center;
 }
 
@@ -66,12 +68,15 @@ a {
     color: #ccc;
     font-size: 13px;
 }
-.ul-table li:hover{
+
+.ul-table li:hover {
     background-color: #000000;
 }
-.first-fun{
+
+.first-fun {
     background-color: #000000;
 }
+
 .search {
     display: flex;
     align-self: center;
@@ -110,23 +115,21 @@ a {
     margin: auto 40px;
     /*transition: background-color 0.3s ease;*/
 }
-.welcome{
+
+.welcome {
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
-    /*padding: 10px 20px;*/
     color: white;
-    /*background-color: #757575;*/
     border-radius: 25px;
     cursor: pointer;
-    height: 100%;
-    /*width: 125px;*/
     font-size: 15px;
     text-align: center;
     margin: auto 60px;
     transition: background-color 0.3s ease;
 }
-.welcome div{
+
+.welcome div {
     margin: auto 0;
     font-size: 18px;
 }
