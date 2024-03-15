@@ -78,7 +78,7 @@
             <img style="width: 50px" height="auto" src="../../public/coverImages/images1.jpg" alt="封面">
             <!--音乐播放区-->
             <audio id="audioId">
-                <source src="" type="audio/mpeg">
+                <source src="../../music/匆匆.mp3" type="audio/mpeg">
                 此浏览器版本不支持audio,建议选用chrome,edge等主流浏览器。
             </audio>
             <div class="center-box-of-bottom">
@@ -88,6 +88,9 @@
                 </div>
                 <div id="progress">
                     <div id="progress-bar"></div>
+                </div>
+                <div class="songName">
+                    <span id="songNameId">匆匆——陈一发儿</span>
                 </div>
                 <div class="songInfomation">
                     <span id="init-time">00:00</span> <span> /  03:53</span>
@@ -110,11 +113,9 @@
     const progressBar = document.getElementById("progress-bar");
     const playMusic = document.getElementById('playMusic');
     const pauseMusic = document.getElementById('pauseMusic');
-
     // 初始化
     pauseMusic.style.display = 'none';
     playMusic.style.display = 'inline-block';
-
     playMusic.addEventListener('click', function () { //点击播放
         pauseMusic.style.display = 'inline-block';
         playMusic.style.display = 'none';
@@ -172,11 +173,14 @@
         pauseInterval();
     }
 
+    let songNameShow = document.getElementById('songNameId');
     /*歌曲点播*/
     let songCells = document.querySelectorAll('td');
     songCells.forEach(function (e) {
         e.addEventListener('click', function () {
             let songName = this.parentNode.children[0].textContent;
+            let songerName = this.parentNode.children[1].textContent;
+            songNameShow.innerText = songName + "——" + songerName;
             let audio = document.getElementById("audioId");
             let newSource = `../../music/${songName}.mp3`; // 新音频文件的路径
             audio.src = newSource;
@@ -190,21 +194,9 @@
         });
     });
 
-    function prevSong(){
+    function CommonShiftSong() {
         let audio = document.getElementById("audioId");
-        let newSource = '../../music/匆匆.mp3'; // 新音频文件的路径
-        audio.src = newSource;
-        audio.load(); // 重新加载音频以便播放新音频
-        //把变量指控 从0秒开始
-        currentTime = 0;
-        clearInterval(timer)
-        playAudio();
-        pauseMusic.style.display = 'inline-block';
-        playMusic.style.display = 'none';
-    };
-    function  nextSong(){
-        let audio = document.getElementById("audioId");
-        let newSource = '../../music/起风了.mp3'; // 新音频文件的路径
+        let newSource = '../../music/猫说.mp3'; // 新音频文件的路径
         audio.src = newSource;
         audio.load(); // 重新加载音频以便播放新音频
         //把变量指控 从0秒开始
@@ -215,7 +207,13 @@
         playMusic.style.display = 'none';
     }
 
+    function prevSong() {
+        CommonShiftSong();
+    }
 
+    function nextSong() {
+        CommonShiftSong();
+    }
 </script>
 </body>
 
