@@ -1,109 +1,90 @@
 * {
-    margin: 0;
     padding: 0;
-}
-
-.bigImg{
-    width: 100%;
-    height: 336px;
-    background-color: #fffcf7;
-}
-
-#container
-{
-    width: 1116px;
-    height: 336px;
-    margin: 0 auto;
-    position: relative;
-}
-
-#photos{
     margin: 0;
+}
+
+body {
+    user-select: none; /*取消用户点击能力*/
+    background: url(../../public/background.jpg) no-repeat;
+}
+
+#music-container {
+    border-radius: 14px;
+    color: #333;
+    height: 500px;
+    margin: 50px 0 0 150px;
+    width: 740px;
     position: absolute;
-    left: 60px;
-    width: 730px;
-    height: 336px;
-    cursor: pointer;
 }
 
-.pictures{
-    position: absolute;
-    width: 730px;
-    height: 336px;
-    list-style: none;
+.second-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #a7a7a7;
 }
 
-#arrows{
-    position: absolute;
-    width: 1110px;
-    height: 60px;
-    margin-top: 130px;
-    margin-left: -60px;
-}
-
-.arrow{
-    font-size: 2.5em;
-    background-color: rgb(144,144,144,0);
-    color: #fcfcfc;
-    width: 37px;
-    cursor: pointer;
-}
-
-.arrow:hover
-{
-    background-color: rgb(144,144,144,0.2);
-}
-
-.client-download
-{
-    position: absolute;
-    right: 72px;
-    display: inline-block;
-    width: 254px;
-    height: 336px;
-    background-image: url('../img/bigImg/下载客户端1.png');
-}
-
-.client-download p
-{
-    position: absolute;
-    bottom: 40px;
-    left: 10px;
-    font-size: 12px;
-    color: #8d8d8d;
-}
-
-.download
-{
-    position: absolute;
-    bottom: 68px;
-    left: 20px;
-    width: 215px;
-    height: 56px;
-    cursor: pointer;
-}
-
-.download:hover
-{
-    background-image: url('../img/bigImg/下载客户端2.png');
-}
-
-#buttons{
+.left-container {
     position: relative;
-    width: 1116px;
-    height: 10px;
-    margin: 0 auto;
-    margin-top: -16px;
-    padding: 0 300px;
-    z-index: 2;
+    height: 450px;
+    width: 600px;
+    padding: 20px 50px;
+    /*设置透明度*/
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
 }
 
-.button{
-    width: 6px;
-    height: 6px;
-    border-radius: 3px;
-    background-color: grey;
-    float: left;
-    margin-right: 18px;
+.play-button {
+    width: 30px;
+    height: 30px;
     cursor: pointer;
 }
+
+.table {
+    border-collapse: collapse;
+    width: 90%;
+    font-size: 19px;
+
+}
+
+.table tr {
+    margin-left: 20px;
+}
+
+.table tr:hover {
+    background-color: #cccccc;
+}
+
+.table tr td {
+    text-align: center;
+    padding: 3px;
+}
+
+.bottom-container {
+    margin: 50px 0;
+    height: 49px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.player-area {
+
+}
+
+.function-area {
+    display: flex;
+    float: right;
+    text-align: center;
+    width: 25%;
+
+}
+
+.function-area img {
+    cursor: pointer;
+    margin: 0 18px;
+    height: 35px;
+    width: 35px;
+}
+

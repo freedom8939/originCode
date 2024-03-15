@@ -5,10 +5,105 @@
     <title>发现好音乐</title>
     <link rel="stylesheet" href="index.css">
 </head>
+<script src="index.js"></script>
 <body>
+<div id="music-container">
 
-</body>
+    <div class="left-container">
+        <h1>发现好音乐</h1>
+        <div class="second-title" style="margin-left: 110px;">寻找心里的声音</div>
+        <table class="table">
+            <tr>
+                <th>歌名</th>
+                <th>歌手</th>
+                <th>点播</th>
+            </tr>
+            <tr>
+                <td>10,000 Hours</td>
+                <td>Justin Bieber</td>
+                <td>
+                    <img class="play-button" src="../../public/play.png">
+                </td>
+            </tr>
+            <tr>
+                <td>If We Have Each Other</td>
+                <td>Alec Benjamin</td>
+                <td>
+                    <img class="play-button" src="../../public/play.png">
+                </td>
+            </tr>
+            <tr>
+                <td>See You Again</td>
+                <td>Wiz Khalifa /Charlie Puth</td>
+                <td>
+                    <img class="play-button" src="../../public/play.png">
+                </td>
+            </tr>
+            <tr>
+                <td>单车</td>
+                <td>陈奕迅</td>
+                <td>
+                    <img class="play-button" src="../../public/play.png">
+                </td>
+            </tr>
+            <tr>
+                <td>月半小夜曲</td>
+                <td>李克勤</td>
+                <td>
+                    <img class="play-button" src="../../public/play.png">
+                </td>
+            </tr>
+            <tr>
+                <td>知足</td>
+                <td>林俊杰</td>
+                <td>
+                    <img class="play-button" src="../../public/play.png">
+                </td>
+            </tr>
+            <tr>
+                <td>猫说</td>
+                <td>黑屋乐队</td>
+                <td>
+                    <img class="play-button" src="../../public/play.png">
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="bottom-container">
+        <!--左侧播放区-->
+        <div class="player-area">
+
+        </div>
+        <!--右侧功能区-->
+        <div class="function-area">
+            <img style="margin: auto 0" src="../../public/prev.png">
+            <img id="playMusic" style="height: 55px; width: auto" src="../../public/playmusic.png">
+            <img id="pauseMusic" style="height: 55px; width: auto" src="../../public/pause.png">
+            <img style="margin: auto 0" src="../../public/next.png">
+        </div>
+    </div>
+
+</div>
 <script>
+    const playMusic = document.getElementById('playMusic');
+    const pauseMusic = document.getElementById('pauseMusic');
+    // 初始化
+    pauseMusic.style.display = 'none';
+    playMusic.style.display = 'inline-block';
+
+    playMusic.addEventListener('click', function() { //点击播放
+        pauseMusic.style.display = 'inline-block';
+        playMusic.style.display = 'none';
+    });
+    pauseMusic.addEventListener('click', function() {
+        pauseMusic.style.display = 'none';
+        playMusic.style.display = 'inline-block';
+    });
+
+
 </script>
+</body>
 
 </html>

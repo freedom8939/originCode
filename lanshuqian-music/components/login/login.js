@@ -7,11 +7,7 @@ $(document).ready(function () {
 
     $('#loginForm').submit(function (event) {
         event.preventDefault();
-
-
         const clickedButtonClass = $(document.activeElement).attr('class');
-
-
         let a = $("#loginUsername").val();
         let b = $("#loginPassword").val()
 
@@ -68,6 +64,7 @@ $(document).ready(function () {
                     checkPassword: b,
                     planetCode: Math.floor(Math.random() * (9999 - 1) + 1)
                 },
+
                 success: function (response) {
                     console.log(response);
                     if (response.code === 0) {
