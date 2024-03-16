@@ -35,7 +35,7 @@
             </tr>
             <tr>
                 <td>说谎</td>
-                <td>陈一发儿</td>
+                <td>林宥嘉</td>
                 <td>
                     <img class="play-button" src="../../public/play.png">
                 </td>
@@ -49,7 +49,7 @@
             </tr>
             <tr>
                 <td>起风了</td>
-                <td>陈一发儿</td>
+                <td>林俊杰</td>
                 <td>
                     <img class="play-button" src="../../public/play.png">
                 </td>
@@ -75,7 +75,7 @@
         <!--左侧播放区-->
         <div class="player-area">
             <!--封面在左侧-->
-            <img style="width: 50px" height="auto" src="../../public/coverImages/images1.jpg" alt="封面">
+            <img id="coverId" style="width: 50px" height="auto" src="../../public/coverImages/images2.jpg" alt="封面">
             <!--音乐播放区-->
             <audio id="audioId">
                 <source src="../../music/匆匆.mp3" type="audio/mpeg">
@@ -93,7 +93,7 @@
                     <span id="songNameId">匆匆——陈一发儿</span>
                 </div>
                 <div class="songInfomation">
-                    <span id="init-time">00:00</span> <span> /  03:53</span>
+                    <span id="init-time">00:00</span> <span id="realTimeEnd"> /  05:00</span>
                 </div>
             </div>
         </div>
@@ -108,7 +108,46 @@
 
 </div>
 <script>
+    const songInformaton = [{
+        songName: "匆匆",
+        singer_name: "陈一发儿",
+        end_time: "05:00",
+        conver_src: "../../public/coverImages/images2.jpg"
+    },{
+        songName: "白山茶",
+        singer_name: "陈一发儿",
+        end_time: "03:58",
+        conver_src: "../../public/coverImages/images3.jpg"
 
+    },{
+        songName: "蓝莲花",
+        singer_name: "陈一发",
+        end_time: "04:30",
+        conver_src: "../../public/coverImages/images4.jpg"
+
+    },{
+        songName: "猫说",
+        singer_name: "黑屋乐队",
+        end_time: "05:00",
+        conver_src: "../../public/coverImages/images5.jpg"
+
+    },{
+        songName: "起风了",
+        singer_name: "林俊杰",
+        end_time: "04:57",
+        conver_src: "../../public/coverImages/images6.jpg"
+
+    },{
+        songName: "说谎",
+        singer_name: "林宥嘉",
+        end_time: "03:51",
+        conver_src: "../../public/coverImages/images7.jpg"
+    },{
+        songName: "漠河舞厅",
+        singer_name: "柳爽",
+        end_time: "05:34",
+        conver_src: "../../public/coverImages/images8.jpg"
+    }];
     const audio = document.getElementById("audioId");
     const progressBar = document.getElementById("progress-bar");
     const playMusic = document.getElementById('playMusic');
@@ -173,6 +212,7 @@
         pauseInterval();
     }
 
+
     let songNameShow = document.getElementById('songNameId');
     /*歌曲点播*/
     let songCells = document.querySelectorAll('td');
@@ -180,6 +220,20 @@
         e.addEventListener('click', function () {
             let songName = this.parentNode.children[0].textContent;
             let songerName = this.parentNode.children[1].textContent;
+            //1通过songName找出元素
+            let songInfo = songInformaton.find(
+                function (song){
+                    return song.songName === songName;
+                }
+            );
+            //2.docuemnt.get获取元素
+            let realTime = document.getElementById('realTimeEnd');
+            //3.元素渲染上去ok
+            realTime.innerText = " / " + songInfo.end_time;
+            //4.更换封面
+            let covers = document.getElementById('coverId');
+            covers.src = songInfo.conver_src;
+
             songNameShow.innerText = songName + "——" + songerName;
             let audio = document.getElementById("audioId");
             let newSource = `../../music/${songName}.mp3`; // 新音频文件的路径
@@ -194,9 +248,21 @@
         });
     });
 
+    /**
+     * 固定
+     */
     function CommonShiftSong() {
         let audio = document.getElementById("audioId");
         let newSource = '../../music/猫说.mp3'; // 新音频文件的路径
+        //
+        songNameShow.innerText = "猫说" + "——" + "黑屋乐队";
+
+        let realTime = document.getElementById('realTimeEnd');
+        //3.元素渲染上去ok
+        realTime.innerText = " / " + "05:00";
+        let covers = document.getElementById('coverId');
+        covers.src = '../../public/coverImages/images5.jpg' ;
+        //
         audio.src = newSource;
         audio.load(); // 重新加载音频以便播放新音频
         //把变量指控 从0秒开始
