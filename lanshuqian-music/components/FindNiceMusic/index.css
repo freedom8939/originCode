@@ -9,10 +9,11 @@ body {
 }
 
 #music-container {
+    /*border:1px solid red;*/
     border-radius: 14px;
     color: #333;
     height: 500px;
-    margin: 50px 0 0 150px;
+    margin: 50px 0 0 230px;
     width: 740px;
     position: absolute;
 }
@@ -24,9 +25,11 @@ body {
 }
 
 .left-container {
+    /*border:1px solid red;*/
+
     position: relative;
     height: 450px;
-    width: 600px;
+    width: 650px;
     padding: 20px 50px;
     /*设置透明度*/
     background: rgba(255, 255, 255, 0.9);
@@ -60,6 +63,7 @@ body {
 }
 
 .bottom-container {
+
     margin: 50px 0;
     height: 49px;
     width: 100%;
@@ -71,6 +75,7 @@ body {
 }
 
 .player-area {
+
     display: flex;
     float: left;
     height: inherit;
@@ -79,6 +84,7 @@ body {
 }
 
 .function-area {
+
     display: flex;
     float: right;
     text-align: center;
@@ -103,6 +109,7 @@ body {
     position: relative;
 
 }
+
 #progress-bar {
     width: 0%;
     height: 100%;
@@ -110,14 +117,60 @@ body {
     position: absolute;
     top: 0;
 }
-.center-box-of-bottom{
+
+.center-box-of-bottom {
     width: 100%;
 }
-.songInfomation{
+
+.songInfomation {
     float: right;
     width: 30%;
 }
-.songName{
+
+.songName {
     float: left;
     margin-left: 30px;
+}
+
+.lyric-container {
+    position: fixed;
+    display: flex;
+    /*top: 50%;*/
+    margin: 370px 0 100px 1250px;
+    transform: translateY(-50%);
+    width: 500px;
+    border-radius: 40px;
+    height: 80%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    /*隐藏*/
+    overflow: hidden;
+    padding: 20px;
+}
+
+.lyric-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    animation: scroll 60s linear infinite;
+}
+
+p {
+    margin: 30px 0;
+}
+
+.lyric-box p {
+    margin: 30px 0;
+}
+
+@keyframes scroll {
+    from {
+        /*保持原位置*/
+        transform: translateY(60%);
+    }
+    to {
+        /*到达的位置*/
+        transform: translateY(-100%);
+    }
 }

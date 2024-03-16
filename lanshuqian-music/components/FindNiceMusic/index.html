@@ -8,8 +8,8 @@
 </head>
 
 <body>
+<!--左侧和下方-->
 <div id="music-container">
-
     <div class="left-container">
         <h1>发现好音乐</h1>
         <div class="second-title" style="margin-left: 110px;">寻找心里的声音</div>
@@ -20,7 +20,7 @@
                 <th>点播</th>
             </tr>
             <tr>
-                <td>匆匆</td>
+                <td>童话镇</td>
                 <td>陈一发儿</td>
                 <td>
                     <img class="play-button" src="../../public/play.png">
@@ -62,13 +62,12 @@
                 </td>
             </tr>
             <tr>
-                <td>猫说</td>
-                <td>黑屋乐队</td>
+                <td>10000Hours</td>
+                <td>Justin Bieber</td>
                 <td>
                     <img class="play-button" src="../../public/play.png">
                 </td>
             </tr>
-
         </table>
     </div>
     <div class="bottom-container">
@@ -78,7 +77,7 @@
             <img id="coverId" style="width: 50px" height="auto" src="../../public/coverImages/images2.jpg" alt="封面">
             <!--音乐播放区-->
             <audio id="audioId">
-                <source src="../../music/匆匆.mp3" type="audio/mpeg">
+                <source src="../../music/童话镇.mp3" type="audio/mpeg">
                 此浏览器版本不支持audio,建议选用chrome,edge等主流浏览器。
             </audio>
             <div class="center-box-of-bottom">
@@ -90,7 +89,7 @@
                     <div id="progress-bar"></div>
                 </div>
                 <div class="songName">
-                    <span id="songNameId">匆匆——陈一发儿</span>
+                    <span id="songNameId">童话镇——陈一发儿</span>
                 </div>
                 <div class="songInfomation">
                     <span id="init-time">00:00</span> <span id="realTimeEnd"> /  05:00</span>
@@ -105,67 +104,142 @@
             <img style="margin: auto 0" src="../../public/next.png" onclick="nextSong()">
         </div>
     </div>
+</div>
 
+<!--右侧歌词滚动版-->
+<div class="lyric-container">
+    <div class="lyric-box">
+        <p></p>
+    </div>
 </div>
 <script>
+    //歌曲信息
     const songInformaton = [{
-        songName: "匆匆",
+        order: "1",
+        songName: "童话镇",
         singer_name: "陈一发儿",
         end_time: "05:00",
-        conver_src: "../../public/coverImages/images2.jpg"
-    },{
+        conver_src: "../../public/coverImages/images2.jpg",
+        lyric: '[00:00.00]童话镇[00:05.00]演唱：陈一发儿[00:10.00]作曲 : 暗杠[00:15.00]作词 : 竹君[00:22.93]听说白雪公主在逃跑[00:26.43]小红帽在担心大灰狼[00:29.83]听说疯帽喜欢爱丽丝[00:33.17]丑小鸭会变成白天鹅[00:36.34]听说彼得潘总长不大[00:40.23]杰克他有竖琴和魔法[00:43.56]听说森林里有糖果屋[00:46.82]灰姑娘丢了心爱的玻璃鞋[00:50.39]只有睿智的河水知道[00:53.68]白雪是因为贪玩跑出了城堡[00:57.31]小红帽有件抑制自己[01:00.73]变成狼的大红袍[01:03.80]总有一条蜿蜒在童话镇里七彩的河[01:11.00]沾染魔法的乖张气息[01:14.42]却又在爱里曲折[01:17.76]川流不息扬起水花[01:20.87]又卷入一帘时光入水[01:24.68]让所有很久很久以前[01:28.12]都走到幸福结局的时刻[01:33.18]music....[01:47.00]听说睡美人被埋藏[01:50.44]小人鱼在眺望金殿堂[01:53.79]听说阿波罗变成金乌[01:57.12]草原有奔跑的剑齿虎[02:00.73]听说匹诺曹总说着谎[02:04.16]侏儒怪拥有宝石满箱[02:07.57]听说悬崖有颗长生树[02:10.80]红鞋子不知疲倦地在跳舞[02:14.43]只有睿智的河水知道[02:17.84]睡美人逃避了生活的煎熬[02:21.14]小人鱼把阳光抹成眼影[02:24.58]投进泡沫的怀抱[02:27.77]总有一条蜿蜒在童话镇里七彩的河[02:35.06]沾染魔法的乖张气息[02:38.43]却又在爱里曲折[02:41.82]川流不息扬起水花[02:44.87]又卷入一帘时光入水[02:48.69]让所有很久很久以前[02:52.00]都走到幸福结局的时刻[02:55.46]总有一条蜿蜒在童话镇里梦幻的河[03:02.47]分隔了理想分隔现实[03:05.82]又在前方的山口汇合[03:09.22]川流不息扬起水花[03:12.36]又卷入一帘时光入水[03:16.23]让全部很久很久以前[03:19.38]都走到幸福结局的时刻[03:22.72]又陌生[03:24.52]啊~~啊~~啊~~啊~~\'\n'
+    }, {
+        order: "2",
         songName: "白山茶",
-        singer_name: "陈一发儿",
+        singer_name: "陈雪凝",
         end_time: "03:58",
-        conver_src: "../../public/coverImages/images3.jpg"
+        conver_src: "../../public/coverImages/images3.jpg",
+        lyric: '[00:00.00] 白山茶 () - 陈雪凝 [00:00.19] 词：叶天爱/安妮宝贝/酥油饼/陈雪凝 [00:00.22] 曲：陈雪凝 [00:00.37] 大概是他恰好钻进了你的心里 [00:05.07] 堵住了那片空白 [00:07.65] 才发现没有他 [00:09.89] 生命变得如此煎熬 [00:14.73] 你认真的说你喜欢白山茶 [00:20.54] 怡然自得的收起别的红玫瑰 [00:24.36] 你温柔的说你眷恋我 [00:28.00] 然后迫不及待的爱别人 [00:31.36] 你给我的感觉总是患得患失 [00:36.19] 就像寒夜里那冰冷的雨滴 [00:40.08] 一次次的猜疑我失去了你 [00:46.01] 贪恋了脱身了结束了心碎了 [00:52.13] 突然想你了 [00:55.21] 想索取怕失去在原地 [00:59.03] 心空虚放过自己 [01:03.10] 时间会抹平一切 [01:07.01] 即使岁月刺痛我伤疤 [01:09.57] 就当我不曾出现 [01:13.67] 你也不曾遇见 [01:19.05] 我爱你你爱她 [01:21.15] 最后我终究自食其果 [01:23.68] 陷入了你的骗局 [01:26.34] 你好好照顾她 [01:28.48] 今后我四海为家 [01:33.68] 你认真的说你喜欢白山茶 [01:39.20] 怡然自得的收起别的红玫瑰 [01:43.08] 你温柔的说你眷恋我 [01:46.72] 然后迫不及待的爱别人 [01:50.01] 你给我的感觉总是患得患失 [01:54.86] 你送我的花儿也慢慢凋谢 [01:58.71] 你说你有多爱我却消失不见 [02:05.71] 你坚定的眼神让我心神错乱 [02:10.38] 傻傻的我还沉浸在 [02:12.43] 你我的梦境 [02:14.37] 你温柔的将白山茶送给我 [02:17.60] 笑着说你多么爱我 [02:20.29] 很爱很爱我 [02:22.51] 我用力钻进你的怀里 [02:24.73] 聆听你心跳 [02:26.35] 我知道余生必定再戒不掉你 [02:29.57] 忽然你消失在我的身边 [02:32.76] 化为红玫瑰 [02:34.00] 剩下我一个人 [02:41.88] 一朵白山茶\n'
 
-    },{
+    }, {
+        order: "3",
         songName: "蓝莲花",
         singer_name: "陈一发",
         end_time: "04:30",
-        conver_src: "../../public/coverImages/images4.jpg"
-
-    },{
-        songName: "猫说",
-        singer_name: "黑屋乐队",
+        conver_src: "../../public/coverImages/images4.jpg",
+        lyric: '[00:00.000] 作词 : 许巍 [00:00.133] 作曲 : 许巍 [00:00.266] 编曲 : 许巍 [00:00.400]没有什么能够阻挡 [00:05.710]你对自由的向往 [00:11.130]天马行空的生涯 [00:16.690]你的心了无牵挂 [00:20.900] [00:22.330]穿过幽暗的岁月 [00:27.510]也曾感到彷徨 [00:32.830]当你低头的瞬间 [00:38.020]才发觉脚下的路 [00:42.070] [00:43.490]心中那自由的世界 [00:49.200]如此的清澈高远 [00:54.010]盛开着永不凋零 [00:58.200]蓝莲花 [01:05.110] [01:50.300]穿过幽暗的岁月 [01:55.300]也曾感到彷徨 [02:00.790]当你低头的瞬间 [02:06.030]才发觉脚下的路 [02:09.930] [02:11.250]穿过幽暗的岁月 [02:16.630]也曾感到彷徨 [02:21.910]当你低头的瞬间 [02:27.320]才发觉脚下的路 [02:31.340] [02:32.670]心中那自由的世界 [02:37.930]如此的清澈高远 [02:43.000]盛开着永不凋零 [02:47.400]蓝莲花 [02:53.650]\n'
+    }, {
+        order: "4",
+        songName: "10000Hours",
+        singer_name: "Justin Beber",
         end_time: "05:00",
-        conver_src: "../../public/coverImages/images5.jpg"
+        conver_src: "../../public/coverImages/images5.jpg",
+        lyric: '[00:00.00] 作词 : Dan Smyers/Jason Boyd/Jessie Jo Dillon/Jordan Reynolds/Justin Bieber/SHAY MOONEY [00:01.00] 作曲 : Dan Smyers/Jason Boyd/Jessie Jo Dillon/Jordan Reynolds/Justin Bieber/SHAY MOONEY [00:02.28]Do you love the rain? Does it make you dance [00:05.87]When you\'re drunk with your friends at a party? [00:08.41]What\'s your favorite song? Does it make you smile? [00:11.04]Do you think of me? [00:12.99]When you close your eyes [00:15.35]Tell me what are you dreaming? [00:18.27]Everything, I wanna  know it all [00:23.55]I\'d spend 10,000 hours and 10,000 more [00:28.76]Oh, if that\'s what it takes to learn that sweet heart of yours [00:34.06]And I might never get there but I\'m gonna try [00:39.49]If it\'s 10,000 hours or the rest of my life [00:44.64]I\'m gonna love you (Ooh) [00:49.97]Do you miss the road that you grew up on? [00:53.80]Did you get your middle name from your grandma? [00:56.43]When you think about your forever now [00:59.00]Do you think of me? [01:01.25]When you close your eyes [01:03.25]Tell me what are you dreaming? [01:06.17]Everything, I wanna know it all [01:10.99]I\'d spend 10,000 hours and 10,000 more [01:16.69]Oh, if that\'s what it takes to learn that sweet heart of yours [01:21.99]And I might never get there but I\'m gonna try [01:27.41]If it\'s 10,000 hours or the rest of my life [01:32.56]I\'m gonna love you (Ooh) [01:37.34]I\'m gonna love you (Ooh) [01:44.18]Ooh, want the good and the bad [01:47.61]Everything in between [01:50.54]Ooh, gotta cure my curiosity [01:55.79]Ooh yeah, I\'d spend 10,000 hours and 10,000 more [02:02.03]Oh, if that\'s what it takes to learn that sweet heart of yours [02:07.36]And I might never get there but I\'m gonna try [02:12.75]If it\'s 10,000 hours or the rest of my life [02:17.82]I\'m gonna love you (Ooh) [02:22.82]I\'m gonna love you, yeah (Ooh) [02:28.68]And I\'m gonna love you [02:34.29]I\'m gonna love you\n'
 
-    },{
+    }, {
+        order: "5",
         songName: "起风了",
         singer_name: "林俊杰",
         end_time: "04:57",
-        conver_src: "../../public/coverImages/images6.jpg"
+        conver_src: "../../public/coverImages/images6.jpg",
+        lyric: '[00:00.00] 起风了 - 林俊杰 [00:02.46] 作词：米果 [00:05.87] 作曲：高桥优 [00:21.96] 这一路上走走停停 [00:24.97] 顺着少年漂流的痕迹 [00:27.98] 迈出车站的前一刻 [00:31.26] 竟有些犹豫 [00:34.19] 不禁笑这近乡情怯 [00:37.51] 仍无可避免 [00:39.93] 而长野的天 [00:41.47] 依旧那么暖 [00:42.99] 风吹起了从前 [00:45.69] 从前初识这世间 [00:48.54] 万般流连 [00:50.32] 看着天边似在眼前 [00:53.26] 也甘愿赴汤蹈火去走它一遍 [00:58.37] 如今走过这世间 [01:01.20] 万般流连 [01:02.93] 翻过岁月不同侧脸 [01:05.95] 措不及防闯入你的笑颜 [01:15.09] 我曾难自拔于世界之大 [01:19.01] 也沉溺于其中梦话 [01:22.16] 不得真假不做挣扎不惧笑话 [01:27.73] 我曾将青春翻涌成她 [01:31.18] 也曾指尖弹出盛夏 [01:34.48] 心之所动且就随缘去吧 [01:41.10] 逆着光行走任风吹雨打 [01:50.96] 短短的路走走停停 [01:53.90] 也有了几分的距离 [01:57.02] 不知抚摸的是故事还是段心情 [02:03.42] 也许期待的不过是与时间为敌 [02:09.10] 再次见到你 [02:10.71] 微凉晨光里 [02:12.11] 笑的很甜蜜 [02:40.10] 从前初识这世间 [02:43.01] 万般流连 [02:44.66] 看着天边似在眼前 [02:47.70] 也甘愿赴汤蹈火去走它一遍 [02:52.64] 如今走过这世间 [02:55.60] 万般流连 [02:57.47] 翻过岁月不同侧脸 [03:00.44] 措不及防闯入你的笑颜 [03:09.49] 我曾难自拔于世界之大 [03:13.37] 也沉溺于其中梦话 [03:16.52] 不得真假不做挣扎不惧笑话 [03:22.15] 我曾将青春翻涌成她 [03:25.81] 也曾指尖弹出盛夏 [03:29.11] 心之所动且就随缘去吧 [03:34.90] 晚风吹起你鬓间的白发 [03:38.85] 抚平回忆留下的疤 [03:41.94] 你眼中明暗交杂一笑生花 [03:47.51] 暮色遮住你蹒跚的步伐 [03:51.54] 走进床头藏起的画 [03:54.71] 画中的你低着头说话 [04:00.41] 我仍感叹于世界之大 [04:03.85] 也沉醉于儿时情话 [04:07.00] 不剩真假不做挣扎无谓笑话 [04:12.94] 我终将青春还给了她 [04:16.54] 连同指尖弹出的盛夏 [04:20.05] 心之所动就随风去了 [04:26.09] 以爱之名你还愿意吗 [04:36.76]\n'
 
-    },{
+    }, {
+        order: "6",
         songName: "说谎",
         singer_name: "林宥嘉",
         end_time: "03:51",
-        conver_src: "../../public/coverImages/images7.jpg"
-    },{
+        conver_src: "../../public/coverImages/images7.jpg",
+        lyric: '[00:00.56]说谎-林宥嘉[00:04.78]是有过几个不错对象[00:12.33]说起来并不寂寞孤单[00:18.53]可能我浪荡让人家不安[00:25.48]才会结果都阵亡[00:34.49]我没有什么阴影魔障[00:42.48]你千万不要放在心上[00:48.55]我又不脆弱[00:51.87]何况那算什么伤[00:55.35]反正爱情不就都这样[01:02.19]我没有说谎[01:05.78]我何必说谎[01:09.53]你知道的[01:11.85]我缺点之一[01:14.15]就是很健忘[01:17.14]我哪有说谎[01:20.94]请别以为你有多难忘[01:25.51]笑是真的不是我逞强[01:49.93]我好久没来这间餐厅[01:57.18]没想到已经换了装潢[02:03.36]角落那窗口[02:06.76]闻得到玫瑰花香[02:10.42]被你一说是有些印象[02:17.35]我没有说谎[02:20.82]我何必说谎[02:24.52]你知道的[02:26.84]我缺点之一[02:29.17]就是很健忘[02:32.12]我哪有说谎[02:35.93]是很感谢今晚的相伴[02:40.47]但我竟然有些不习惯[02:47.08]我没有说谎[02:51.11]我何必说谎[02:54.63]爱一个人[02:56.81]没爱到难道[02:59.05]就会怎么样[03:02.08]别说我说谎[03:05.81]人生已经如此的艰难[03:10.41]有些事情就不要拆穿[03:16.92]我没有说谎是爱情说谎[03:24.40]它带你来骗我说[03:28.02]渴望的有 可能有希望[03:32.19]我没有说谎[03:35.83]祝你做个幸福的新娘[03:43.70]我的心事请你就遗忘'
+    }, {
+        order: "7",
         songName: "漠河舞厅",
         singer_name: "柳爽",
         end_time: "05:34",
-        conver_src: "../../public/coverImages/images8.jpg"
+        conver_src: "../../public/coverImages/images8.jpg",
+        lyric: '作词 : 柳爽 [00:01.000] 作曲 : 柳爽 [00:02.530] 编曲：王子豪 [00:03.420] 制作人：柳爽 徐林 唐森 [00:28.730] 我从没有见过极光出现的村落 [00:35.290] 也没有见过有人 在深夜放烟火 [00:42.070] 晚星就像你的眼睛杀人又放火 [00:48.430] 你什么都没有说 野风惊扰我 [00:55.490] 三千里，偶然见过你 [01:02.310] 花园里，有裙翩舞起 [01:08.770] 灯光底，抖落了晨曦 [01:15.260] 在1980的漠河舞厅 [01:22.300] 如果有时间 [01:24.180] 你会来看一看我吧 [01:27.820] 看大雪如何衰老的 [01:31.080] 我的眼睛如何融化 [01:34.650] 如果你看见我的话 [01:37.710] 请转过身去再惊讶 [01:41.990] 我怕我的眼泪我的白发像羞耻的笑话 [02:18.060] 我从没有见过极光出现的村落 [02:24.210] 也没有见过有人 在深夜放烟火 [02:30.990] 晚星就像你的眼睛杀人又放火 [02:37.430] 你什么都不必说 野风惊扰我 [02:44.460] 可是你 惹怒了神明 [02:50.890] 让你去 还那么年轻 [02:57.870] 都怪你 远山冷冰冰 [03:04.200] 在一个人的漠河舞厅 [03:11.360] 如果有时间 [03:13.330] 你会来看一看我吧 [03:16.980] 看大雪如何衰老的 [03:20.160] 我的眼睛如何融化 [03:23.580] 如果你看见我的话 [03:26.850] 请转过身去再惊讶 [03:31.000] 我怕我的眼泪我的白发像羞耻的笑话 [03:38.490] 如果有一天 [03:40.390] 我的信念忽然倒塌 [03:43.720] 城市的花园没有花 [03:47.080] 广播里的声音嘶哑 [03:50.530] 如果真有这天的话 [03:53.800] 你会不会奔向我啊 [03:57.980] 尘封入海吧 [04:04.680] 尘封入海吧 [04:14.460] 制作管理：魏新全 [04:15.990] 监制：车笑逸 [04:17.350] 配唱制作人：徐林 [04:18.720] 弦乐/小号编写：唐森 [04:19.920] 弦乐演奏：国际首席爱乐乐团 [04:21.450] 小号：Noah Hocker [04:23.000] 和声：陈聆子 [04:24.230] 合唱：徐林 戴林港 张悦 辛雯 黄宛露 李甜甜 车笑逸 [04:25.420] 木吉他：王子豪 [04:26.510] 电吉他：陈逸伦 [04:27.490] 电吉他Solo：颜鑫 [04:28.540] Bass：郭力玮 [04:29.690] 鼓：舒坤泉 [04:30.470] 音频编辑：丁晨泽 [04:31.560] 混音/母带：王路遥 [04:32.590] 录音师：丁晨泽 Philip Au 戴林港 [04:33.650] 录音棚：2496 Top Music [04:34.590] 企划：郭佳怡 [04:35.400] 制作协力：李甜甜'
+
     }];
+    //audio元素
     const audio = document.getElementById("audioId");
+    //进度条
     const progressBar = document.getElementById("progress-bar");
+    //获取和播放暂停有关事件
     const playMusic = document.getElementById('playMusic');
     const pauseMusic = document.getElementById('pauseMusic');
+    const lyricBox = document.querySelector('.lyric-box');
+    const songNameShow = document.getElementById('songNameId');
+
     // 初始化
     pauseMusic.style.display = 'none';
     playMusic.style.display = 'inline-block';
+
+    //播放和暂停的两个事件
     playMusic.addEventListener('click', function () { //点击播放
         pauseMusic.style.display = 'inline-block';
         playMusic.style.display = 'none';
         playAudio();
+        lyricBox.style.animationPlayState = 'running'; // 暂停动画
+
     });
     pauseMusic.addEventListener('click', function () { //点击暂停
         pauseMusic.style.display = 'none';
         playMusic.style.display = 'inline-block';
         pauseAudio();
+        lyricBox.style.animationPlayState = 'paused'; // 暂停动画
+
         //停止计时器
     });
+
+    lyricBox.style.animationPlayState = 'paused'; // 暂停动画
+
+    /*歌曲点播*/
+    let songCells = document.querySelectorAll('td');
+
+    songCells.forEach(function (e) {
+        e.addEventListener('click', function () {
+            let songName = this.parentNode.children[0].textContent;
+            let songerName = this.parentNode.children[1].textContent;
+            //1通过songName找出元素
+            let songInfo = songInformaton.find(
+                function (song) {
+                    return song.songName === songName;
+                }
+            );
+            //清楚之前的歌词
+            initialLyricBox();
+            lyricChange(songInfo);
+            //2.docuemnt.get获取元素
+            let realTime = document.getElementById('realTimeEnd');
+            //3.元素渲染上去ok
+            realTime.innerText = " / " + songInfo.end_time;
+            //4.更换封面
+            let covers = document.getElementById('coverId');
+            covers.src = songInfo.conver_src;
+            //歌词滚动
+            lyricBox.style.animationPlayState = 'running'; // 暂停动画
+            songNameShow.innerText = songName + "——" + songerName;
+            let audio = document.getElementById("audioId");
+            let newSource = `../../music/${songName}.mp3`; // 新音频文件的路径
+            audio.src = newSource;
+            audio.load(); // 重新加载音频以便播放新音频
+            //把变量指控 从0秒开始
+            currentTime = 0;
+            clearInterval(timer)
+            playAudio();
+            pauseMusic.style.display = 'inline-block';
+            playMusic.style.display = 'none';
+        });
+    });
+
 
     function updateProgress() {
         let progress = (audio.currentTime / audio.duration) * 100;
@@ -176,7 +250,7 @@
     }
 
     let timeSpan = document.getElementById('init-time');
-    let currentTime = 0;  //表示时间从0开始
+    let currentTime = 0;
     // 定义定时器变量
     let timer;
 
@@ -195,7 +269,6 @@
     function startTimer() {
         timer = setInterval(updateTime, 1000); // 每秒更新一次
     }
-
     //停止定时器
     function pauseInterval() {
         clearInterval(timer); // 清除定时器
@@ -212,56 +285,25 @@
         pauseInterval();
     }
 
-
-    let songNameShow = document.getElementById('songNameId');
-    /*歌曲点播*/
-    let songCells = document.querySelectorAll('td');
-    songCells.forEach(function (e) {
-        e.addEventListener('click', function () {
-            let songName = this.parentNode.children[0].textContent;
-            let songerName = this.parentNode.children[1].textContent;
-            //1通过songName找出元素
-            let songInfo = songInformaton.find(
-                function (song){
-                    return song.songName === songName;
-                }
-            );
-            //2.docuemnt.get获取元素
-            let realTime = document.getElementById('realTimeEnd');
-            //3.元素渲染上去ok
-            realTime.innerText = " / " + songInfo.end_time;
-            //4.更换封面
-            let covers = document.getElementById('coverId');
-            covers.src = songInfo.conver_src;
-
-            songNameShow.innerText = songName + "——" + songerName;
-            let audio = document.getElementById("audioId");
-            let newSource = `../../music/${songName}.mp3`; // 新音频文件的路径
-            audio.src = newSource;
-            audio.load(); // 重新加载音频以便播放新音频
-            //把变量指控 从0秒开始
-            currentTime = 0;
-            clearInterval(timer)
-            playAudio();
-            pauseMusic.style.display = 'inline-block';
-            playMusic.style.display = 'none';
+    function initialLyricBox() {
+        //选择所有的p元素并且进置空
+        const paragraphs = document.querySelectorAll('p');
+        paragraphs.forEach(e => {
+            e.style.display = 'none';
         });
-    });
+    }
 
-    /**
-     * 固定
-     */
+
+
     function CommonShiftSong() {
         let audio = document.getElementById("audioId");
-        let newSource = '../../music/猫说.mp3'; // 新音频文件的路径
-        //
-        songNameShow.innerText = "猫说" + "——" + "黑屋乐队";
-
+        let newSource = '../../music/10000Hours.mp3'; // 新音频文件的路径
+        songNameShow.innerText = "10000Hours" + "——" + "Dan Shay / Justin Bieber";
         let realTime = document.getElementById('realTimeEnd');
         //3.元素渲染上去ok
         realTime.innerText = " / " + "05:00";
         let covers = document.getElementById('coverId');
-        covers.src = '../../public/coverImages/images5.jpg' ;
+        covers.src = '../../public/coverImages/images5.jpg';
         //
         audio.src = newSource;
         audio.load(); // 重新加载音频以便播放新音频
@@ -280,7 +322,27 @@
     function nextSong() {
         CommonShiftSong();
     }
+
+    lyricChange(songInformaton[0]);
+
+    function lyricChange(musicLrc) {
+        let lyricContainer = document.querySelector('.lyric-box');
+        var musicLrcText = musicLrc.lyric;
+        let str = musicLrcText.split('[');
+        for (let i = 0; i < str.length; i++) {
+            if (str[i].trim() !== '') {
+                let lyric_one = str[i].split(']');
+                let lyric = lyric_one[1];
+                //  // 创建 p 标签
+                let p = document.createElement('p');
+                p.textContent = lyric;
+                // 将 p 标签添加到歌词容器中
+                lyricContainer.appendChild(p);
+            }
+        }
+    }
+
+
 </script>
 </body>
-
 </html>
