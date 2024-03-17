@@ -4,9 +4,9 @@
 
 > 本项目是一款在线的音乐播放器项目，项目由
 > HTML5, CSS3, JavaScript实现。
-> 项目中使用了两个前端第三方库(均以cdn方式引进):
-> + Cookies
-> + jquery
+> 项目中使用了两个前端第三方库(均以cdn方式引进,少量使用):
+> + Cookies (用于简化操作cookie)
+> + jquery  (用于简化元素获取)
 > <br/> 
 > 
 > 后端基于JAVA实现，实现了用户登录,注册,退出登录，JDK版本: JDK11。使用SpringBoot进行快速开发，主要技术栈：

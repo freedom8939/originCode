@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    let userLoginState = Cookies.get('userLoginState'); //获取cookie
 
     $('ul.ul-table li a').on('click', function (e) {
         e.preventDefault();
@@ -8,15 +8,19 @@ $(document).ready(function () {
 
     });
 
-    $.ajax({
-        url: 'http://localhost:8080/api/user/current',
-        type: 'GET',
-        xhrFields: {
-            withCredentials: true // 允许发送 cookie
-        },
-        success: function (response) {
-        }
-    });
+    if (userLoginState != null){
+        $.ajax({
+            url: 'http://localhost:8080/api/user/current',
+            type: 'GET',
+            xhrFields: {
+                withCredentials: true // 允许发送 cookie
+            },
+            success: function (response) {
+                let s = JSON.stringify(response.data);
+                document.cookie = "userLoginState=" + s + "; path= /";
+            }
+        });
+    }
 
     //退出登录
     $('#logoutButton').on('click', function () {
@@ -25,7 +29,7 @@ $(document).ready(function () {
             url: 'http://localhost:8080/api/user/logout',
             type: 'POST',
             xhrFields: {
-                withCredentials: true
+                withCredentials: true // 允许发送 cookie
             },
             success: function (response) {
                 Cookies.remove('userLoginState');
