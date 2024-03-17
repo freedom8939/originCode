@@ -1,6 +1,13 @@
+
+@font-face {
+    font-family: "阿里妈妈方圆体 VF Regular";src: url("../../fonts/AlimamaFangYuanTiVF-Thin.woff2") format("woff2"),
+url("//../../fonts/AlimamaFangYuanTiVF-Thin.woff") format("woff");
+    font-display: swap;
+}
 * {
     padding: 0;
     margin: 0;
+    font-family: "阿里妈妈方圆体 VF Regular";
 }
 
 body {
@@ -46,7 +53,6 @@ body {
     border-collapse: collapse;
     width: 90%;
     font-size: 19px;
-
 }
 
 .table tr {
@@ -63,7 +69,6 @@ body {
 }
 
 .bottom-container {
-
     margin: 50px 0;
     height: 49px;
     width: 100%;

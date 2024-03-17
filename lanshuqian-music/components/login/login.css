@@ -1,8 +1,15 @@
+
+@font-face {
+    font-family: "阿里妈妈方圆体 VF Regular";src: url("../../fonts/AlimamaFangYuanTiVF-Thin.woff2") format("woff2"),
+url("//../../fonts/AlimamaFangYuanTiVF-Thin.woff") format("woff");
+    font-display: swap;
+}
 body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
     display: flex;
+    font-family: "阿里妈妈方圆体 VF Regular";
     justify-content: center;
     align-items: center;
     height: 100vh;

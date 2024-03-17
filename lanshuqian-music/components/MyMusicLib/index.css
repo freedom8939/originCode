@@ -14,6 +14,8 @@ body {
     overflow: hidden;
     background-color: #F5F5F5;
     user-select: none;
+    font-family: "阿里妈妈方圆体 VF Regular";
+
 }
 
 .container {
@@ -98,19 +100,14 @@ body {
     margin: 20px 0 20px 20px;
 }
 table{
-    width: 80%;
+    width: 90%;
 }
 table tr,td{
     text-align: center;
 }
-
-
 table img{
     width: 40px;
     height: 40px;
+    cursor: pointer;
 }
 
-td {
-    font-family: "阿里妈妈方圆体 VF Regular";
-
-}
