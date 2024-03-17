@@ -82,13 +82,13 @@ body{
     font-size: 13px;
 }
 
-.ul-table li:hover {
+/*.ul-table li:hover {
     background-color: #000000;
 }
 
 .first-fun {
     background-color: #000000;
-}
+}*/
 
 .search {
     display: flex;

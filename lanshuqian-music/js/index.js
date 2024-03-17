@@ -1,4 +1,6 @@
 $(document).ready(function () {
+
+    changeColor();
     let userLoginState = Cookies.get('userLoginState'); //获取cookie
 
     $('ul.ul-table li a').on('click', function (e) {
@@ -58,5 +60,20 @@ $(document).ready(function () {
             },400)
         }
     })
+    function changeColor(){
+        //初始化颜色
+        let songCells = document.querySelectorAll('li');
+        songCells[0].style.backgroundColor = '#000000';
+        //维护css选择上方的黑色
+        songCells.forEach(function (e) {
+            e.addEventListener('click', function () {
+                //取消其他的颜色
+                songCells.forEach(function (cell) {
+                    cell.style.backgroundColor = ''; // 重置所有元素的颜色
+                });
 
+                this.style.backgroundColor = '#000000'; // 设置你想要的颜色
+            });
+        });
+    }
 });
