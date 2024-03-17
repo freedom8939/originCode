@@ -1,0 +1,80 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+    background-color: #F5F5F5;
+    user-select: none;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.myLib {
+    display: inline-block;
+    margin: 40px 0 0 40px;
+}
+
+.left-box {
+    color: white;
+    background-color: #000000;
+    border-radius: 40px 0 0 40px;
+    padding: 9px 40px;
+}
+
+.right-box {
+    background-color: #4CAF50;
+    color: white;
+    padding: 9px 40px;
+    border-radius: 0 40px 40px 0;
+}
+
+.item {
+    margin-top: 80px;
+    width: 250px;
+    height: 150px;
+    font-size: 15px;
+    border: 1px solid #f4f4f4;
+    padding: 10px;
+    color: black;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.item:hover {
+    background: #eee;
+    cursor: pointer;
+}
+
+.cover-image {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.artist-info {
+    font-size: 14px;
+    color: #666;
+}
+
+.center-box {
+    height: 100vh;
+    background-color: #FFFFFF;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.bottom-box {
+    position: absolute;
+    border: 1px solid red;
+    top: 40%;
+    left: 10%;
+    width: 80%;
+    height: 400px;
+}
