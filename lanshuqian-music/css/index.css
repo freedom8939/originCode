@@ -119,14 +119,12 @@ body{
     display: block;
     padding: 5px 4px;
     color: white;
-    /*background-color: #757575;*/
     border-radius: 25px;
     cursor: pointer;
     width: 80px;
     font-size: 14px;
     text-align: center;
     margin: auto 40px;
-    /*transition: background-color 0.3s ease;*/
 }
 
 .welcome {

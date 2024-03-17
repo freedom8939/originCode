@@ -189,12 +189,12 @@
     pauseMusic.style.display = 'none';
     playMusic.style.display = 'inline-block';
 
+    /**
+     * 重新绘制动画 不然会一直向上
+     */
     function reverseOriginPosition() {
-        // 清除动画属性
         lyricBox.style.animation = 'none';
-        //重新绘制
-        lyricBox.offsetWidth;
-        // 重新应用动画
+        lyricBox.offsetWidth; //重新绘制
         lyricBox.style.animation = 'scroll 60s linear infinite';
     }
 
@@ -211,8 +211,6 @@
         playMusic.style.display = 'inline-block';
         pauseAudio();
         lyricBox.style.animationPlayState = 'paused'; // 暂停动画
-
-        //停止计时器
     });
 
     lyricBox.style.animationPlayState = 'paused'; // 暂停动画

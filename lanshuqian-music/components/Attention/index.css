@@ -1,0 +1,130 @@
+@font-face {
+    font-family: "阿里妈妈方圆体 VF Regular";
+    src: url("../../fonts/AlimamaFangYuanTiVF-Thin.woff2") format("woff2"),
+    url("../../fonts/AlimamaFangYuanTiVF-Thin.woff") format("woff");
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F5F5F5;
+    user-select: none;
+    font-family: "阿里妈妈方圆体 VF Regular";
+    overflow: hidden;
+}
+
+.container {
+    /*display: flex;*/
+    margin: 0 40px;
+    height: 100vh;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.center-box {
+    height: 100vh;
+    background-color: #FFFFFF;
+    width: 60%;
+    /*整个容器剧中*/
+    margin: 0 auto;
+}
+.hotRank{
+    padding: 50px;
+    display: flex;
+    align-self: end;
+}
+#hot{
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    width: 90px;
+    font-size: 28px;
+    height: auto;
+    align-self: end;
+}
+.every-box{
+    position: relative;
+    display: flex;
+    border-bottom: 1px solid #F1F1F1;
+}
+.every-image{
+    border-radius: 15px;
+    height: 90px;
+    margin: 20px 30px;
+    width: auto;
+}
+.number-area{
+    font-size: 40px;
+    align-self: center;
+    color: #ED56A1;
+    margin-left: 40px;
+}
+.songName{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.songer{
+    display: block;
+    color: #c9baba;
+    font-size: 15px;
+    margin-top: 6px;
+    align-self: end;
+}
+.tagBox{
+    margin-top: 15px;
+    display: flex;
+}
+.tag span{
+    margin: 0 20px;
+}
+.tagBox > span:nth-child(1){
+    font-size: 15px;
+    background-color: #FDEFF6;
+    border-radius: 20px;
+    color: #F179B5;
+    padding: 8px;
+}
+.tagBox > span:nth-child(2){
+    font-size: 15px;
+    background-color: #FDEFF6;
+    border-radius: 20px;
+    margin: 0 20px;
+    color: #F179B5;
+    padding: 8px;
+}
+
+.tagBox > span:last-child{
+    font-size: 15px;
+    background-color: #FDEFF6;
+    border-radius: 20px;
+    color: #F179B5;
+    padding: 8px;
+}
+.searhMore{
+    display: flex;
+    justify-content: center;
+margin-top: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.play{
+    width: 70px;
+    height: auto;
+    position: absolute;
+    cursor: pointer;
+    top: 21%;
+    right: 5%;
+}
+.Second{
+    font-size:36px;
+}
+.third{
+    font-size:30px;
+}
+.forth{
+    font-size:24px;
+}
