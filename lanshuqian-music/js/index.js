@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     });
 
-    if (userLoginState != null){
+    if (userLoginState != null) {
         $.ajax({
             url: 'http://localhost:8080/api/user/current',
             type: 'GET',
@@ -41,5 +41,22 @@ $(document).ready(function () {
             }
         });
     });
+    //搜索
+    let search = document.querySelector('.searchImg');
+    let searchText = document.getElementById('search_text');
+    search.addEventListener('click', function () {
+        const searchContent = searchText.value
+        let temp = searchContent.trim();
+        if (temp.length >0){
+            alert('开始搜索')
+        }else{
+            let failsearch = document.getElementById('failSearch');
+            failsearch.textContent = '搜索失败';
+            failsearch.style.display = 'block';
+            setTimeout(()=>{
+                failsearch.style.display = 'none';
+            },400)
+        }
+    })
 
 });

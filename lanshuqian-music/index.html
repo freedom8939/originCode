@@ -29,8 +29,8 @@
     </ul>
 
     <div class="search">
-        <input type="text" class="searchBox" id="search_text" value="寻找心里的声音">
-        <img class="searchImg" src="public/search.png" alt="">
+        <input type="text" class="searchBox" id="search_text"  placeholder="寻找心里的声音">
+        <img id="searchImage" class="searchImg" src="public/search.png" alt="">
         <div class="login" id="loginButton">
             <span>登录</span>
         </div>
@@ -60,6 +60,14 @@
         </p>
     </div>
 </div>
+
+<div id="successSearch" class="message">
+    成功搜索！
+</div>
+<div id="failSearch" class="message">
+    搜索失败！
+</div>
+
 <script>
     $(document).ready(function () {
 
