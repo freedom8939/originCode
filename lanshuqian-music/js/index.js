@@ -1,12 +1,13 @@
 $(document).ready(function () {
 
     changeColor();
-    let userLoginState = Cookies.get('userLoginState'); //获取cookie
 
+    let userLoginState = Cookies.get('userLoginState'); //获取cookie
+// 更新 iframe 的 src 属性
     $('ul.ul-table li a').on('click', function (e) {
         e.preventDefault();
-        var pageUrl = $(this).attr('href');
-        $('#myFrame').attr('src', pageUrl); // 更新 iframe 的 src 属性
+        let pageUrl = $(this).attr('href');
+        $('#myFrame').attr('src', pageUrl);
 
     });
 
@@ -43,6 +44,7 @@ $(document).ready(function () {
             }
         });
     });
+
     //搜索
     let search = document.querySelector('.searchImg');
     let searchText = document.getElementById('search_text');

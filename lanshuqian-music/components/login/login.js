@@ -127,4 +127,4 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-var randomInt = getRandomInt(1, 99999); // 生成一个介于 1（包括）到 100（不包括）之间的随机整数
+const randomInt = getRandomInt(1, 99999); // 生成一个介于 1（包括）到 100（不包括）之间的随机整数

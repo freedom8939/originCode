@@ -343,7 +343,7 @@
 
     function lyricChange(musicLrc) {
         let lyricContainer = document.querySelector('.lyric-box');
-        var musicLrcText = musicLrc.lyric;
+        const musicLrcText = musicLrc.lyric;
         let str = musicLrcText.split('[');
         for (let i = 0; i < str.length; i++) {
             if (str[i].trim() !== '') {
