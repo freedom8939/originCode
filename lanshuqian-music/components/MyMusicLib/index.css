@@ -1,3 +1,10 @@
+
+@font-face {
+    font-family: "阿里妈妈方圆体 VF Regular";src: url("../../fonts/AlimamaFangYuanTiVF-Thin.woff2") format("woff2"),
+url("//../../fonts/AlimamaFangYuanTiVF-Thin.woff") format("woff");
+    font-display: swap;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -69,12 +76,41 @@ body {
     width: 80%;
     margin: 0 auto;
 }
+.loveSong{
+    display: flex;
+    margin-left: 15px;
+}
+#lovesongs{
+    align-self: center;
+    margin-left: 9px;
+    font-family: "阿里妈妈方圆体 VF Regular";
+    font-size: 20px;
+}
 
 .bottom-box {
     position: absolute;
-    border: 1px solid red;
     top: 40%;
     left: 10%;
     width: 80%;
     height: 400px;
+}
+.mySongList{
+    margin: 20px 0 20px 20px;
+}
+table{
+    width: 80%;
+}
+table tr,td{
+    text-align: center;
+}
+
+
+table img{
+    width: 40px;
+    height: 40px;
+}
+
+td {
+    font-family: "阿里妈妈方圆体 VF Regular";
+
 }
