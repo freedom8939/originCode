@@ -182,6 +182,15 @@
     pauseMusic.style.display = 'none';
     playMusic.style.display = 'inline-block';
 
+    function reverseOriginPosition() {
+        // 清除动画属性
+        lyricBox.style.animation = 'none';
+        //重新绘制
+        lyricBox.offsetWidth;
+        // 重新应用动画
+        lyricBox.style.animation = 'scroll 60s linear infinite';
+    }
+
     //播放和暂停的两个事件
     playMusic.addEventListener('click', function () { //点击播放
         pauseMusic.style.display = 'inline-block';
@@ -214,6 +223,7 @@
                     return song.songName === songName;
                 }
             );
+            reverseOriginPosition();
             //清楚之前的歌词
             initialLyricBox();
             lyricChange(songInfo);
@@ -224,6 +234,7 @@
             //4.更换封面
             let covers = document.getElementById('coverId');
             covers.src = songInfo.conver_src;
+
             //歌词滚动
             lyricBox.style.animationPlayState = 'running'; // 暂停动画
             songNameShow.innerText = songName + "——" + songerName;
@@ -269,6 +280,7 @@
     function startTimer() {
         timer = setInterval(updateTime, 1000); // 每秒更新一次
     }
+
     //停止定时器
     function pauseInterval() {
         clearInterval(timer); // 清除定时器
@@ -292,7 +304,6 @@
             e.style.display = 'none';
         });
     }
-
 
 
     function CommonShiftSong() {

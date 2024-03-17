@@ -7,6 +7,12 @@ a {
     text-decoration: none;
 }
 
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -171,7 +177,7 @@ a {
 
 .footer p {
     margin: 0;
-    color: #666;
+    color: #333;
 }
 
 .footer a {
