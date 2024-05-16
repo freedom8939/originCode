@@ -1,73 +1,111 @@
-
 @font-face {
-    font-family: "阿里妈妈方圆体 VF Regular";src: url("../../fonts/AlimamaFangYuanTiVF-Thin.woff2") format("woff2"),
-url("//../../fonts/AlimamaFangYuanTiVF-Thin.woff") format("woff");
+    font-family: "阿里妈妈方圆体 VF Regular";
+    src: url("../../fonts/AlimamaFangYuanTiVF-Thin.woff2") format("woff2"),
+    url("//../../fonts/AlimamaFangYuanTiVF-Thin.woff") format("woff");
     font-display: swap;
 }
-body {
-    background-color: #f4f4f4;
-    margin: 0;
+
+* {
     padding: 0;
-    display: flex;
+    margin: 0;
+}
+
+body {
     font-family: "阿里妈妈方圆体 VF Regular";
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    overflow: hidden;
 }
-.container {
-    background-color: #fff;
-    padding: 110px;
-    border-radius: 18px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-h2 {
-    margin-top: 0;
-}
-.tab {
+
+.logo {
     display: flex;
-    margin-left: 15px;
-}
-.tab button {
-    background-color: #007bff;
-    color: white;
-    margin: 20px 25px;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    float: left;
-    border-radius: 10px;
-}
-.tab button:hover {
-    background-color: #0056b3;
-}
-.form-content {
-    padding: 60px;
-
-    background-color: #f9f9f9;
-    border-radius: 0 0 18px 18px;
-
+    margin: 30px;
 }
 
-.form-group {
-    margin-bottom: 15px;
+.logo > span {
+    align-self: center;
+    margin: 0 20px;
+    font-size: 25px;
 }
-input {
-    width: 100%;
-    padding: 8px;
+
+.logo > img {
+    width: 50px;
+}
+
+.login {
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    height: 90vh;
+}
+.background{
+    height: 500px;
+}
+.music-pic{
+    height:800px;
+    width: auto;
+    margin-left: 420px;
+    margin-bottom: 250px;
+}
+.font-login > span {
+    display: flex;
+    flex-direction: column;
+}
+
+.login > div > span {
+    font-size: 28px;
+    color: #2691FF;
+    font-weight: bold;
+}
+
+.usernanmeAndPassword > input {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-radius: 3px;
+    margin-top: 10px;
+    padding: 10px;
     border-radius: 3px;
     border: 1px solid #ccc;
 }
-.btn {
-    padding: 10px 20px;
-    background-color: #007bff;
-    border: none;
-    color: #fff;
-    border-radius: 3px;
-    cursor: pointer;
+.diffLogin{
+    display: flex;
+    /*justify-content: space-between;*/
 }
-/*放置*/
-.btn-primary:hover {
-    background-color: #0056b3;
+.grep{
+    margin: 0 10px;
+}
+.check {
+    margin: 15px 0 20px 10px;
+    width: 10px;
+    height: 10px;
+}
+
+a {
+    color: #276CDF;
+    text-decoration: none;
+}
+
+.forgetAccount {
+    margin-left: 130px;
+}
+.tabs1,.tabs2{
+    padding: 10px 5px;
+    width: 30%;
+    cursor: pointer;
+    background-color: #276CDF;
+    color: #fff;
+    border-radius: 15px;
+    border:1px solid ;
+}
+.login-btn {
+
+}
+.register-login-button{
+    display: flex;
+    justify-content: space-around;
+}
+.footer{
+    color: #a7a7a7;
+    margin-top: 100px;
 }
 .success-message {
     display: none;
@@ -81,3 +119,81 @@ input {
     border-radius: 10px;
     z-index: 9999;
 }
+
+/*body {*/
+/*    background-color: #f4f4f4;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    display: flex;*/
+/*    font-family: "阿里妈妈方圆体 VF Regular";*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 100vh;*/
+/*}*/
+/*.container {*/
+/*    background-color: #fff;*/
+/*    padding: 110px;*/
+/*    border-radius: 18px;*/
+/*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+/*}*/
+/*h2 {*/
+/*    margin-top: 0;*/
+/*}*/
+/*.tab {*/
+/*    display: flex;*/
+/*    margin-left: 15px;*/
+/*}*/
+/*.tab button {*/
+/*    background-color: #007bff;*/
+/*    color: white;*/
+/*    margin: 20px 25px;*/
+/*    padding: 10px 20px;*/
+/*    border: none;*/
+/*    cursor: pointer;*/
+/*    float: left;*/
+/*    border-radius: 10px;*/
+/*}*/
+/*.tab button:hover {*/
+/*    background-color: #0056b3;*/
+/*}*/
+/*.form-content {*/
+/*    padding: 60px;*/
+
+/*    background-color: #f9f9f9;*/
+/*    border-radius: 0 0 18px 18px;*/
+
+/*}*/
+
+/*.form-group {*/
+/*    margin-bottom: 15px;*/
+/*}*/
+/*input {*/
+/*    width: 100%;*/
+/*    padding: 8px;*/
+/*    border-radius: 3px;*/
+/*    border: 1px solid #ccc;*/
+/*}*/
+/*.btn {*/
+/*    padding: 10px 20px;*/
+/*    background-color: #007bff;*/
+/*    border: none;*/
+/*    color: #fff;*/
+/*    border-radius: 3px;*/
+/*    cursor: pointer;*/
+/*}*/
+/*!*放置*!*/
+/*.btn-primary:hover {*/
+/*    background-color: #0056b3;*/
+/*}*/
+/*.success-message {*/
+/*    display: none;*/
+/*    position: fixed;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    background-color: #4CAF50;*/
+/*    color: white;*/
+/*    padding: 15px;*/
+/*    border-radius: 10px;*/
+/*    z-index: 9999;*/
+/*}*/

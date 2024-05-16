@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
     $('#loginButton').click(function () {
         window.location.href = "./components/login/login.html";
     });
@@ -10,8 +9,6 @@ $(document).ready(function () {
         const clickedButtonClass = $(document.activeElement).attr('class');
         let a = $("#loginUsername").val();
         let b = $("#loginPassword").val()
-
-
         if (clickedButtonClass === 'tabs1') {
             $.ajax({
                 type: "POST",
@@ -36,8 +33,6 @@ $(document).ready(function () {
                         setTimeout(function () {
                             $('#successMessage').hide();
                         }, 1000);
-
-
                         //登陆成功跳转到主界面
                     } else {
                         console.log('登录失败:' + response.message)
@@ -55,6 +50,7 @@ $(document).ready(function () {
             });
 
         } else if (clickedButtonClass === 'tabs2') {
+            console.log('注册')
             $.ajax({
                 type: "POST",
                 url: "http://localhost:8080/api/user/register",

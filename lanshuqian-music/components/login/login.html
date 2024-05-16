@@ -8,6 +8,62 @@
 </head>
 <body>
 <div class="container">
+    <div class="logo">
+        <img src="../../public/logo.png" alt="">
+        <span>LNNU在线音乐平台</span>
+    </div>
+    <!--login界面-->
+    <form id="loginForm">
+        <div class="login">
+            <div class="font-login">
+                <span>登录到</span>
+                <span>LNNU在线音乐平台</span>
+                <div class="usernanmeAndPassword">
+
+
+                    <input type="text" id="loginUsername" name="loginUsername" required placeholder="请输入账号">
+                    <input type="password" id="loginPassword" name="loginPassword" required placeholder="请输入密码">
+                </div>
+                <div>
+                    <input type="text" class="check"> 记住账号
+                    <span class="forgetAccount"><a href="#">忘记账号</a></span>
+                </div>
+                <div class="register-login-button">
+                    <button class="tabs1">登录</button>
+                    <button class="tabs2">注册</button>
+                </div>
+                <div class="diffLogin" style="margin-top: 10px;display:flex;">
+                    <span style=""><a href="">二维码登录</a></span>
+                    <span class="grep"> | </span>
+                    <span style=""><a href="">手机号登录</a> </span>
+                </div>
+                <div>
+                    <div class="footer">
+                        CopyRight: 202321020167
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img class="music-pic" src="../../public/暂无音乐.png"/>
+            </div>
+        </div>
+    </form>
+    <div></div>
+    <!--footer-->
+    <div id="successMessage" class="success-message">
+        登录成功！
+    </div>
+    <div id="errorMessage" class="success-message">
+        登录失败！
+    </div>
+    <div id="registerSuccessMessage" class="success-message">
+        注册成功！
+    </div>
+    <div id="registerFailMessage" class="success-message">
+        注册失败！
+    </div>
+</div>
+<!--<div class="container">
     <div>
         <h2>登录 / 注册</h2>
         <form id="loginForm" class="form-content">
@@ -38,7 +94,7 @@
     </div>
     <div id="registerFailMessage" class="success-message">
         注册失败！
-    </div>
+    </div>-->
 
 </div>
 
