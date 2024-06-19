@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章阅读</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="index.js"></script>
 </head>
 <body>
-推送音乐
+
+<main>
+    <section id="articles-list">
+        <!-- 文章列表会在这里渲染 -->
+    </section>
+    <section id="article-detail" class="hidden">
+        <button id="back-button">返回</button>
+        <div id="article-content">
+            <!-- 文章内容会在这里渲染 -->
+        </div>
+    </section>
+</main>
+<script src="script.js"></script>
 </body>
 </html>

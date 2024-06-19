@@ -27,7 +27,7 @@ body {
 
 .myLib {
     display: inline-block;
-    margin: 40px 0 0 40px;
+    margin: 40px 0 0 20px;
 }
 
 .left-box {
@@ -45,7 +45,7 @@ body {
 }
 
 .item {
-    margin-top: 80px;
+    margin-top: 50px;
     width: 250px;
     height: 150px;
     font-size: 15px;
@@ -75,7 +75,7 @@ body {
 .center-box {
     height: 100vh;
     background-color: #FFFFFF;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 }
 .loveSong{
@@ -91,8 +91,8 @@ body {
 
 .bottom-box {
     position: absolute;
-    top: 40%;
-    left: 10%;
+    top: 35%;
+    left: 5%;
     width: 80%;
     height: 400px;
 }
@@ -100,10 +100,11 @@ body {
     margin: 20px 0 20px 20px;
 }
 table{
-    width: 90%;
+    width: 100%;
 }
 table tr,td{
     text-align: center;
+   
 }
 table img{
     width: 40px;
@@ -111,3 +112,17 @@ table img{
     cursor: pointer;
 }
 
+.hotRank{
+    /* padding: 50px 0 ; */
+    margin: 20px 0 0 40px;
+    display: flex;
+    /* align-self: end; */
+}
+#hot{
+    /* flex-wrap: nowrap; */
+    /* white-space: nowrap; */
+    width: 90px;
+    font-size: 28px;
+    line-height: 90px;
+    align-self: center;
+}

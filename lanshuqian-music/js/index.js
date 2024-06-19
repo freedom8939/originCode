@@ -1,29 +1,32 @@
 $(document).ready(function () {
 
-    changeColor();
+
 
     let userLoginState = Cookies.get('userLoginState'); //获取cookie
-// 更新 iframe 的 src 属性
-    $('ul.ul-table li a').on('click', function (e) {
+
+    // 更新 iframe 的 src 属性
+    $('.navigation a').on('click', function (e) {
         e.preventDefault();
         let pageUrl = $(this).attr('href');
         $('#myFrame').attr('src', pageUrl);
 
     });
 
-    if (userLoginState != null) {
-        $.ajax({
-            url: 'http://localhost:8080/api/user/current',
-            type: 'GET',
-            xhrFields: {
-                withCredentials: true // 允许发送 cookie
-            },
-            success: function (response) {
-                let s = JSON.stringify(response.data);
-                document.cookie = "userLoginState=" + s + "; path= /";
-            }
-        });
-    }
+    // if (userLoginState != null) {
+    //     $.ajax({
+    //         url: 'http://localhost:8080/api/user/current',
+    //         type: 'GET',
+    //         xhrFields: {
+    //             withCredentials: true // 允许发送 cookie
+    //         }, headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         success: function (response) {
+    //             let s = JSON.stringify(response.data);
+    //             document.cookie = "userLoginState=" + s + "; path= /";
+    //         }
+    //     });
+    // }
 
     //退出登录
     $('#logoutButton').on('click', function () {
@@ -51,18 +54,18 @@ $(document).ready(function () {
     search.addEventListener('click', function () {
         const searchContent = searchText.value
         let temp = searchContent.trim();
-        if (temp.length >0){
+        if (temp.length > 0) {
             alert('开始搜索')
-        }else{
+        } else {
             let failsearch = document.getElementById('failSearch');
             failsearch.textContent = '搜索失败';
             failsearch.style.display = 'block';
-            setTimeout(()=>{
+            setTimeout(() => {
                 failsearch.style.display = 'none';
-            },400)
+            }, 400)
         }
     })
-    function changeColor(){
+    function changeColor() {
         //初始化颜色
         let songCells = document.querySelectorAll('li');
         songCells[0].style.backgroundColor = '#000000';
