@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const articlesList = document.getElementById('articles-list');
     const articleDetail = document.getElementById('article-detail');
     const articleContent = document.getElementById('article-content');
-    const backButton = document.getElementById('back-button');
 
     let currentPage = 1;
     const pageSize = 10;
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isLoading = true;
         $.ajax({
             type: "get",
-            url: `http://localhost:8080/api/content/list/search/${page}/${size}`,
+            url: `http://114.116.226.107:8080/api/content/list/search/${page}/${size}`,
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -30,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     hasMoreArticles = false;
                 }
                 isLoading = false;
+                console.log(response)
             },
             error: function (xhr, status, error) {
                 console.error(xhr.responseText);
@@ -43,32 +43,37 @@ document.addEventListener('DOMContentLoaded', () => {
         articles.forEach(article => {
             const articleItem = document.createElement('div');
             articleItem.classList.add('article-item');
+
+            let time = convertTimestampToReadableDate(article.ctime);
+
             articleItem.innerHTML = `
-                <img src="${article.coverImage}" alt="${article.title}" />
-                <h2>${article.title}</h2>
-                <p>${article.brief}</p>
-                <div class="article-meta">
-                    <img src="${article.avatar}" alt="${article.userName}" />
-                    <span>${article.userName}</span>
+              <div class="dy_con">
+                <div style="display: flex; align-items: center;">
+                  <img width="40px" height="40px" src="${article.avatar}" alt="">
+                  <span class="name_">${article.userName}</span>
+                  <span class="time" style="color:grey; margin-left: auto;">${time}</span>
                 </div>
+                <p class="title_n">${article.title}</p>
+                <div>
+                    <p>${article.brief}</p>
+                </div>
+                <hr>
+              </div>
             `;
+
             articleItem.addEventListener('click', () => {
                 showArticleDetail(article);
             });
+
             articlesList.appendChild(articleItem);
         });
     }
 
     function showArticleDetail(article) {
-        articleContent.innerHTML = marked(article.content); // 使用 marked.js 渲染 Markdown 内容
-        articlesList.classList.add('hidden');
-        articleDetail.classList.remove('hidden');
+        const articleId = article.id;
+        const queryString = `?id=${encodeURIComponent(article.articleId)}`;
+        window.location.href = `../../components/contentDetail/index.html${queryString}`;
     }
-
-    backButton.addEventListener('click', () => {
-        articleDetail.classList.add('hidden');
-        articlesList.classList.remove('hidden');
-    });
 
     function handleScroll() {
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
@@ -79,6 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', handleScroll);
 
-    // 初始加载文章
     fetchArticles(currentPage, pageSize);
+
+    function convertTimestampToReadableDate(timestamp, format = 'YYYY-MM-DD HH:mm:ss') {
+        return dayjs.unix(timestamp).add(20, 'months').format(format);
+    }
 });

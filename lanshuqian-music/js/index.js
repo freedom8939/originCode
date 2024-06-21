@@ -32,7 +32,7 @@ $(document).ready(function () {
     $('#logoutButton').on('click', function () {
         Cookies.remove('userLoginState');
         $.ajax({
-            url: 'http://localhost:8080/api/user/logout',
+            url: 'http://114.116.226.107:8080/api/user/logout',
             type: 'POST',
             xhrFields: {
                 withCredentials: true // 允许发送 cookie

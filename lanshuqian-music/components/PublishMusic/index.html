@@ -2,26 +2,33 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>文章阅读</title>
-    <link rel="stylesheet" href="./styles.css">
+    <title>音乐新闻</title>
+    <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.6/dayjs.min.js"></script>
     <script src="index.js"></script>
+
 </head>
 <body>
+<div class="n_container">
+    
+    <div class="n_todayNew">Today新闻</div>
+    <span class="publishContent">发布新闻</span>
+    <div class="line"></div>
+    <main>
 
-<main>
-    <section id="articles-list">
-        <!-- 文章列表会在这里渲染 -->
-    </section>
-    <section id="article-detail" class="hidden">
-        <button id="back-button">返回</button>
-        <div id="article-content">
-            <!-- 文章内容会在这里渲染 -->
-        </div>
-    </section>
-</main>
-<script src="script.js"></script>
+        <main>
+            <section id="articles-list">
+            </section>
+            <section id="article-detail" class="hidden">
+                <div id="article-content">
+                </div>
+            </section>
+        </main>
+    </main>
+</div>
+
+
 </body>
 </html>

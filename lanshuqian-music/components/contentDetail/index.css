@@ -1,0 +1,88 @@
+@font-face {
+    font-family: "阿里妈妈方圆体 VF Regular";
+    src: url("../../fonts/AlimamaFangYuanTiVF-Thin.woff2") format("woff2"),
+        url("//../../fonts/AlimamaFangYuanTiVF-Thin.woff") format("woff");
+    font-display: swap;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #F5F5F5;
+    font-family: "阿里妈妈方圆体 VF Regular";
+
+}
+
+.content {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#au {
+    color: #358DFF;
+}
+
+.header_n {
+    
+    width: 46%;
+    padding: 20px 19px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+#content {
+    width: 46%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px 19px;
+}
+
+.title_n {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.infoBc {
+    background-color: #fff;
+}
+
+.info {
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px 0 rgba(53, 141, 255, 0.3), 0 6px 20px 0 rgba(53, 141, 255, 0.2);
+
+    width: 280px;
+    position: absolute;
+    top: 100px;
+    background-color: #fff;
+    /* right:-20%; */
+    left: 75%;
+    z-index: 999;
+    height: 300px;
+}
+
+.infoP {
+    margin-top: 4px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#_name {
+    position: relative;
+    top: -50px;
+    left: 30%;
+}
+
+#contnet_n {
+    min-width: 260px;
+    width: 500px;
+    height: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+#content img {
+    width: 60%;
+}

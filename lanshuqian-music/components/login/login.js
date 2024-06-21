@@ -16,7 +16,7 @@ $(document).ready(function () {
         if (clickedButtonClass === 'tabs1') {
             $.ajax({
                 type: "POST",
-                url: "http://localhost:8080/api/user/login",
+                url: "http://114.116.226.107:8080/api/user/login",
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -58,7 +58,7 @@ $(document).ready(function () {
             };
             $.ajax({
                 type: "POST",
-                url: "http://localhost:8080/api/user/register",
+                url: " http://114.116.226.107:8080/api/user/register",
                 data: JSON.stringify(data),
                 headers: {
                     'Content-Type': 'application/json'
@@ -78,7 +78,7 @@ $(document).ready(function () {
                         };
                         $.ajax({
                             type: "POST",
-                            url: "http://localhost:8080/api/user/login",
+                            url: " http://114.116.226.107:8080/api/user/login",
                             data: JSON.stringify(datas),
                             headers: {
                                 'Content-Type': 'application/json'
