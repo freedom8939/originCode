@@ -2,7 +2,7 @@
 
 # 纯原生js,css,html项目
 ## 项目在线访问地址：
-`http://47.236.11.35/lanshuqian-music/`
+`http:///lanshuqian-music`
 ## 项目介绍：
 
 
